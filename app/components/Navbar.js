@@ -51,17 +51,16 @@ export default function Navbar() {
                         <Link href="" className="mr-1"><Twitter size={15} /></Link>
                     </div>
                 </div>
-                <div className="flex gap-x-9">
+                <div className="flex items-center gap-x-9">
                     <Link href="/" className="font-normal hover:opacity-75">Tentang Loakin </Link>
                     <Link href="/" className="font-normal hover:opacity-75">Tim Kami</Link>
                     <Link href="/" className="font-normal hover:opacity-75">Bantuan </Link>
-                    <Link href="/" className="font-normal hover:opacity-75">Promo</Link>
                 </div>
             </div>
             {/* header on top selesai */}
 
             {/* navbar with searchbar */}
-            <div className="flex justify-around items-center px-9 py-4 md:py-0">
+            <div className="flex justify-between items-center px-9 py-4 md:py-0">
                 <div className="hidden md:flex justify-between items-center py-5">
                     <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Loakin.id</span>
@@ -96,13 +95,13 @@ export default function Navbar() {
                     </svg>
                 </div>
                 <div className="flex items-center ">
-                    <div className="mr-5 md:mr-15">
+                    <div className="mr-7 md:mr-15">
                         <Link href="#">
                             <FiShoppingCart size={23} color="white" />
                         </Link>
                     </div>
                     <div className="hidden md:flex">
-                        <Link href="/" className="font-normal text-white">Masuk / Daftar</Link>
+                        <Link href="/" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
                     </div>
                     <div className="flex lg:hidden">
                         <button
