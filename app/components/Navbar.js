@@ -118,7 +118,7 @@ export default function Navbar() {
                 </div>
                 {/* login */}
                 <div className="hidden lg:flex">
-                    <Link href="/" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
+                    <Link href="/login" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
                 </div>
                 <div className="flex lg:hidden">
                     <button
