@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-import { FiShoppingCart } from "react-icons/fi";
 
 export default function Tooltip({ triggerElement, href = "#" }) {
     return (

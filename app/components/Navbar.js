@@ -5,7 +5,6 @@ import Image from "next/image"
 import { useState } from "react"
 import { useRouter, usePathname } from "next/navigation";
 
-import { Facebook, Instagram, Twitter } from "lucide-react"
 import { FiShoppingCart } from "react-icons/fi";
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -19,13 +18,15 @@ const navigationLeft = [
 ]
 
 const product = [
-    'Baju Renang', 
-    'Sepatu Joging', 
-    'Kerudung Pasmina', 
-    'Laptop Asus', 
+    'Baju Renang',
+    'Sepatu Joging',
+    'Kerudung Pasmina',
+    'Laptop Asus',
     'Smartwatch',
     'Mouse Gaming',
 ]
+
+const productCatalog = []
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -47,10 +48,7 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <div className="flex items-center">
-                        <p href="#" className="font-normal">Ikuti Kami di</p>
-                        <Link href="" className="mr-1"><Facebook size={15} /></Link>
-                        <Link href="" className="mr-1"><Instagram size={15} /></Link>
-                        <Link href="" className="mr-1"><Twitter size={15} /></Link>
+                        <Tooltip triggerElement={<p href="#" className="font-normal">Ikuti Kami</p>} href={'/'} />
                     </div>
                 </div>
                 <div className="flex items-center gap-x-9">
@@ -98,24 +96,34 @@ export default function Navbar() {
                         </g>
                     </svg>
                 </div>
-                {/* chart & login */}
+                {/* chart*/}
                 <div className="flex items-center ">
-                    <div className="mr-8 md:ml-6">
-                        <Tooltip triggerElement={<FiShoppingCart size={23} color="white" />} />
+                    <div className="flex items-center gap-2">
+                        <Link href={'/'}>
+                            <FiShoppingCart size={23} color="white" />
+                        </Link>
+                        <div className="h-6 w-px bg-gray-500/50" />
+
+                        {productCatalog.length === 0 ? (
+                            <p className="text-white">0</p>
+                        ) : (
+                            <p className="text-white">{productCatalog.length}</p>
+                        )}
                     </div>
-                    <div className="hidden lg:flex">
-                        <Link href="/" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
-                    </div>
-                    <div className="flex lg:hidden">
-                        <button
-                            type="button"
-                            onClick={() => setMobileMenuOpen(true)}
-                            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            <Bars3Icon aria-hidden="true" className="size-6" />
-                        </button>
-                    </div>
+                </div>
+                {/* login */}
+                <div className="hidden lg:flex">
+                    <Link href="/" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
+                </div>
+                <div className="flex lg:hidden">
+                    <button
+                        type="button"
+                        onClick={() => setMobileMenuOpen(true)}
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                    >
+                        <span className="sr-only">Open main menu</span>
+                        <Bars3Icon aria-hidden="true" className="size-6" />
+                    </button>
                 </div>
             </div>
             {/* product under searchbar */}
@@ -126,7 +134,6 @@ export default function Navbar() {
                     ))}
                 </div>
             </div>
-            {/* product under searchbar selesai */}
             {/* navbar with searchbar selesai */}
 
             {/* mini device */}
