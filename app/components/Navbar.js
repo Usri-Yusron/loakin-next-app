@@ -27,7 +27,18 @@ const product = [
 ]
 
 const productCatalog = [
-    'boneka'
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
+    'boneka',
 ]
 
 export default function Navbar() {
@@ -105,17 +116,23 @@ export default function Navbar() {
                             <FiShoppingCart size={23} color="white" />
                         </Link>
 
-                        {productCatalog.length === 0 ? (                            
+                        {productCatalog.length === 0 ? (
                             <></>
                         ) : (
                             <>
-                                <div className="h-6 w-px bg-gray-500/50" />
                                 <p className="text-white">{productCatalog.length}</p>
                             </>
-                            
                         )}
                     </div>
                 </div>
+                {/* sekat */}
+                {productCatalog.length === 0 ? (
+                            <></>
+                        ) : (
+                            <>
+                                <div className="h-6 w-px md:hidden bg-gray-500/50" />
+                            </>
+                        )}
                 {/* login */}
                 <div className="hidden lg:flex">
                     <Link href="/login" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
