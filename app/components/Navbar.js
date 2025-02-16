@@ -10,6 +10,8 @@ import { FiShoppingCart } from "react-icons/fi";
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import Tooltip from "./Tooltip";
+
 
 const navigationLeft = [
     { name: 'Panduan', href: '/' },
@@ -61,6 +63,7 @@ export default function Navbar() {
 
             {/* navbar with searchbar */}
             <div className="flex justify-between items-center px-9 py-4 md:py-0">
+                {/* logo */}
                 <div className="hidden md:flex justify-between items-center py-5">
                     <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Loakin.id</span>
@@ -73,6 +76,7 @@ export default function Navbar() {
                         />
                     </Link>
                 </div>
+                {/* searchbar */}
                 <div className="flex items-center border w-2/3 pr-3 gap-2 bg-white border-gray-500/30 h-[46px] rounded-[5px] overflow-hidden">
                     <input className="w-full h-full pl-5 outline-none placeholder-gray-500 text-sm" placeholder="Carinya disini aja" type="text" />
                     <svg fill="#6B7280" viewBox="0 0 30 30" height={22} width={22} y="0px" x="0px" xmlns="http://www.w3.org/2000/svg">
@@ -94,13 +98,12 @@ export default function Navbar() {
                         </g>
                     </svg>
                 </div>
+                {/* chart & login */}
                 <div className="flex items-center ">
-                    <div className="mr-7 md:mr-15">
-                        <Link href="#">
-                            <FiShoppingCart size={23} color="white" />
-                        </Link>
+                    <div className="mr-8 md:ml-6">
+                        <Tooltip triggerElement={<FiShoppingCart size={23} color="white" />} />
                     </div>
-                    <div className="hidden md:flex">
+                    <div className="hidden lg:flex">
                         <Link href="/" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
                     </div>
                     <div className="flex lg:hidden">
