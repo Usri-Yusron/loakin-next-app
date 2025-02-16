@@ -26,7 +26,9 @@ const product = [
     'Mouse Gaming',
 ]
 
-const productCatalog = []
+const productCatalog = [
+    'boneka'
+]
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -96,18 +98,21 @@ export default function Navbar() {
                         </g>
                     </svg>
                 </div>
-                {/* chart*/}
+                {/* kerangjang */}
                 <div className="flex items-center ">
                     <div className="flex items-center gap-2">
                         <Link href={'/'}>
                             <FiShoppingCart size={23} color="white" />
                         </Link>
-                        <div className="h-6 w-px bg-gray-500/50" />
 
-                        {productCatalog.length === 0 ? (
-                            <p className="text-white">0</p>
+                        {productCatalog.length === 0 ? (                            
+                            <></>
                         ) : (
-                            <p className="text-white">{productCatalog.length}</p>
+                            <>
+                                <div className="h-6 w-px bg-gray-500/50" />
+                                <p className="text-white">{productCatalog.length}</p>
+                            </>
+                            
                         )}
                     </div>
                 </div>
