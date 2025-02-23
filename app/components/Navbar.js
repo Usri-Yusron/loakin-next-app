@@ -78,13 +78,7 @@ export default function Navbar() {
                 <div className="hidden md:flex justify-between items-center py-5">
                     <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Loakin.id</span>
-                        <Image
-                            alt="Loakin.id"
-                            src="/logo1.png"
-                            className="h-8"
-                            width={150} // Lebar gambar (dalam piksel)
-                            height={150} // Tinggi gambar (dalam piksel)
-                        />
+                        <Image src="/real_new.png" alt="Loakin Logo" className="h-14 w-auto" width={56} height={56} />
                     </Link>
                 </div>
                 {/* searchbar */}
@@ -127,15 +121,19 @@ export default function Navbar() {
                 </div>
                 {/* sekat */}
                 {productCatalog.length === 0 ? (
-                            <></>
-                        ) : (
-                            <>
-                                <div className="h-6 w-px md:hidden bg-gray-500/50" />
-                            </>
-                        )}
+                    <></>
+                ) : (
+                    <>
+                        <div className="h-6 w-px md:hidden bg-gray-500/50" />
+                    </>
+                )}
                 {/* login */}
                 <div className="hidden lg:flex">
-                    <Link href="/login" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
+                    {pathname === "/" ? (
+                        <Link href="/login" className="font-normal text-white hover:underline">Masuk / Daftar</Link>
+                    ) : (
+                        <Link href="/" className="font-normal text-white hover:underline">Back to Home</Link>
+                    )}                    
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -201,14 +199,14 @@ export default function Navbar() {
                                         onClick={() => router.push("/")}
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
-                                        Next  <span aria-hidden="true">&rarr;</span>
+                                        Login  <span aria-hidden="true">&rarr;</span>
                                     </button>
                                 ) : (
                                     <button
                                         onClick={() => router.push("/")}
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
-                                        Back
+                                        Logout
                                     </button>
                                 )}
                             </div>
