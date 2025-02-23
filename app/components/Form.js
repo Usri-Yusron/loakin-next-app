@@ -3,12 +3,12 @@ import React from 'react';
 
 export default function Form() {
   return (
-    <section className=''>
+    <section className='p-5'>
     <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-8 border rounded-md shadow-md">
       <div className="">
         <div className="mb-2 flex justify-center" />
         <h2 className="text-center text-2xl font-bold leading-tight text-black">
-          Masuk ke Loakin.id
+          Masuk ke <span className='font-mono'>Loakin<span className='text-orange-500/100'>.</span>id</span> 
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           Belum punya satupun akun? <span className="font-bold"><Link href="/">Klik disini untuk buat akun</Link></span> 
