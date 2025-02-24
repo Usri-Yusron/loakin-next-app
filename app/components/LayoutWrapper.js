@@ -8,7 +8,7 @@ export default function LayoutWrapper({ children }) {
 
   return (
     <>
-      {pathname === "/login" ? (
+      {pathname === "/login" || "/registrasi" ? (
         <main>{children}</main>
       ) : (
         <>

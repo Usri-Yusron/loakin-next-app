@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Masuk ke Loakin.id",
-  description: "Masuk ke akun Loakin.id untuk mulai jual beli barang preloved.",
+  title: "Daftar di Loakin.id",
+  description: "Buat akun di Loakin.id untuk mulai jual beli barang preloved.",
 };
 
-export default function LoginLayout({ children }) {
+export default function RegistasiLayout({ children }) {
   return <main>{children}</main>;
 }
 
