@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 import Form from "../components/Form";
 
@@ -12,11 +12,18 @@ export default function LoginPage() {
         <div className="w-svw">
           <div className="sm:flex justify-evenly">
             <div className="hidden md:grid grid-col">
-              <DotLottieReact
-                src="https://lottie.host/513726e4-cc77-41da-be0b-3302f74aca6d/FFGIqF1myG.lottie"
+              <Player
+                autoplay
+                loop
+                src="/logo.json" // Pastikan JSON valid
+              />
+              {/* <DotLottieReact
+                src="/logo.json"
+                height={300}
+                width={300}
                 loop
                 autoplay
-              />
+              /> */}
               <div>
                 <p className="text-center text-4xl font-extrabold font-mono">Loakin<span className='text-orange-500/100'>.</span>id</p>
                 <p className="text-center text-sm text-gray-600">Marketplace untuk barang preloved terpercaya</p></div>
