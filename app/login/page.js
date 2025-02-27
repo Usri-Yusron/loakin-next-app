@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import axios from "axios";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
